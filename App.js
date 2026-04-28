@@ -33,12 +33,14 @@ export default function App() {
 
 		if (!apenasNumeros.test(preco)) {
 			setErroPreco('Somente numeros')
+			return
 		} else {
 			setErroPreco(undefined)
 		}
 
 		if (preco <= 0) {
 			setErroPreco('Somente preços acima de 0')
+			return
 		} else {
 			setErroPreco(undefined)
 		}
@@ -58,6 +60,7 @@ export default function App() {
 
 		if (!codigoValido.test(codigo)) {
 			setErroCodigo('Formato invaldio. Em ordem, 3 letras e 4 números')
+			return
 		} else {
 			setErroCodigo(undefined)
 		}
@@ -141,7 +144,7 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold'
 	},
 	div_input_loongo: {
-		padding: 30
+		padding: 20
 	},
 	input_loongo: {
 		width: 400,
