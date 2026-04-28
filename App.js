@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View, Button, Image, TextInput, Alert } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, TextInput } from 'react-native';
 
 export default function App() {
 	const [nome, setNome] = useState('')
@@ -51,7 +51,7 @@ export default function App() {
 		} else {
 			setErroEstoque(undefined)
 		}
-		if (estoque < 0) {
+		if (estoque <= 0) {
 			setErroEstoque('O estoque não pode ser negativo')
 			return
 		} else {
@@ -65,7 +65,7 @@ export default function App() {
 			setErroCodigo(undefined)
 		}
 
-		Alert.alert('Nome gravado com sucesso')
+		alert('Nome gravado com sucesso')
 
 	}
 	return (
